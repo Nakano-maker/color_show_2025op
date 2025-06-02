@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const socket = new WebSocket("ws://localhost:3000"); // ✅ WebSocket 接続
+    const socket = new WebSocket("wss://color-show-2025op.onrender.com"); //  WebSocket 接続
 
     socket.onopen = () => {
         console.log("✅ WebSocket 接続確立");
