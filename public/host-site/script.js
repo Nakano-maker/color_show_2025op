@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //  WebSocket 接続確立
     socket.onopen = () => {
-        console.log("✅ WebSocket 接続確立");
+        console.log(" WebSocket 接続確立");
         socketReady = true;
     };
 
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const pingURL = ""; // Ping を送信する URL
+const pingURL = "https://color-show-2025op.onrender.com/"; // Ping を送信する URL
 const logList = document.getElementById("logList");
 
 function sendPing() {
@@ -330,5 +330,5 @@ masterDimmer.addEventListener("input", () => {
 const flashButton = document.getElementById("flashButton");
 
 flashButton.addEventListener("click", () => {
-    addLog(" <<Flash PUT>>", "orange"); // ✅ FLASH 操作をオレンジ色でログに記録
+    addLog(" <<Flash PUT>>", "orange"); //  FLASH 操作をオレンジ色でログに記録
 });
