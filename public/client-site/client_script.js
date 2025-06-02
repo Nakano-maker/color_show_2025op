@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const socket = new WebSocket("wss://color-show-2025op.onrender.com"); //  WebSocket 接続
 
     socket.onopen = () => {
-        console.log("✅ WebSocket 接続確立");
+        console.log("server Connect - ture");
     };
 
     socket.onmessage = (event) => {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // ✅ `backgroundColor` ではなく `background` を適用
             document.body.style.background = color;
-            console.log("🎨 背景色更新:", color);
+            console.log("server signal reception:", color);
         }
     };
 });
