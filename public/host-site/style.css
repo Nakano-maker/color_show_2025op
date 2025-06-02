@@ -1,0 +1,317 @@
+body {
+    background-color: rgb(26,26,26);
+}
+
+.preview-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.pvw, .pgm ,.pgmfake  {
+    width: 530px;
+    height: 299px;
+    border: 4px solid rgb(90,76,30);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.pvw { left: 30px; top: 50px; }
+.pgm { left: 600px; top: 50px; }
+.pgmfake { left: 600px; top: 50px; }
+
+
+/* コントロールパネル（左下配置） */
+.control-panel {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+}
+
+/* カラープリセット（左下配置） */
+.preset-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+    width: max-content;
+}
+
+.preset {
+    width: 115px;
+    height: 115px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* カラーピッカー（プリセットの右側） */
+.palette-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#colorPicker {
+    width:  100px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+/* カラーピッカーのボタンを特定の位置に固定 */
+.palette-container {
+    position: absolute;
+    top: 210px;  /* Y座標（縦方向） */
+    left: 500px; /* X座標（横方向） */
+    padding: 10px;
+    background-color: rgb(50,50,50);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* カラーピッカー本体 */
+#colorPicker {
+    width: 90px;
+    height: 90px;
+    border: none;
+    cursor: pointer;
+}
+
+.preset {
+    width: 115px; 
+    height: 115px; 
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* CUT auto ボタンの位置_レイアウト定義 */
+
+#cutButton {
+    position: absolute;
+    top: 385px;
+    left: 780px;
+}
+
+#autoButton {
+    position: absolute;
+    top: 510px;
+    left: 780px;
+}
+/* AUTO・CUT ボタン共通設定 */
+.auto-cut-buttons {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 500px;
+    left: 100px;
+}
+
+/* カットボタン */
+#cutButton {
+    width: 220px;  /* 幅 */
+    height: 115px;  /* 高さ */
+    border-radius: 8px; /* 角の丸み */
+    background-color: #000000; /* 背景色 */
+    color: white; /* フォント色 */
+    font-size: 18px; /* フォントサイズ */
+    font-weight: bold;
+    border: 3px solid rgb(90,76,30); /* 枠の色・太さ */
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+/* AUTOボタン */
+#autoButton {
+    width: 220px;  /* 幅 */
+    height: 115px;  /* 高さ */
+    border-radius: 8px; /* 角の丸み */
+    background-color: #000000; /* 背景色*/
+    color: white; /* フォント色 */
+    font-size: 18px; /* フォントサイズ */
+    font-weight: bold;
+    border: 3px solid rgb(90,76,30); /* 枠の色・太さ */
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+/* ホバー時のスタイル変更 */
+#cutButton:hover {
+    background-color: #2100b3;
+}
+
+#autoButton:hover {
+    background-color: #0012b3;
+}
+
+/* fade time ボタンのレイアウト　*/
+
+.fade-control {
+    position: absolute;
+    top: 630px; /* 縦方向の座標を変更 */
+    left: 810px; /* 横方向の座標を変更 */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* ボタン間隔を確保 */
+}
+
+/* fadetime の表示　*/
+#fadeTimeDisplay {
+    position: absolute;
+    top: 640px; /* 縦座標 */
+    left: 700px; /* 横座標 */
+    font-size: 32px;
+    font-weight: bold;
+    color: white; 
+}
+
+
+/* ボタンのサイズとデザイン */
+.fade-control button {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 40px;
+    background-color: #0400ff;
+    color: white;
+    border: 3px solid rgb(90,76,30);
+    cursor: pointer;
+}
+
+/* フラッシュ関係 */
+#flashButton {
+    position: absolute;
+    top: 80px; /* 縦座標 */
+    left: 190px; /* 横座標 */
+    font-size: 32px;
+    font-weight: bold;
+    color: white; 
+    background-color: #000000;
+    border: 3px solid rgb(90,76,30);
+    border-radius: 5px; 
+    width: 150px;
+    height: 70px;
+}
+
+
+#bpmDisplay {
+    position: absolute;
+    top: 725px; /* 縦座標 */
+    left: 660px; /* 横座標 */
+    font-size: 32px;
+    font-weight: bold;
+    color: white; 
+}
+
+
+/* えっほ！えっほ！　今日はここまでって伝えなっきゃ！　えっほ！えっほ　*/
+
+#increaseBPM {
+    position: absolute;
+    top: 85px; /* 縦座標 */
+    left: 0px; /* 横座標 */
+    font-size: 32px;
+    font-weight: bold;
+    color: white;  width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 40px;
+    background-color: #0400ff;
+    color: white;
+    border: 3px solid rgb(90,76,30);
+    cursor: pointer;
+}
+
+#decreaseBPM {
+    position: absolute;
+    top: 85px; /* 縦座標 */
+    left: 90px; /* 横座標 */
+    font-size: 32px;
+    font-weight: bold;
+    color: white; 
+     width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    font-size: 40px;
+    background-color: #0400ff;
+    color: white;
+    border: 3px solid rgb(90,76,30);
+    cursor: pointer;
+}
+
+
+/*いつまでたっても終わらんなぁ　みつを*/
+
+/* master dimmerのレイアウト　*/
+.dimmer-control {
+    position: absolute;
+    top: 540px;
+    left: 910px;
+    width: 320px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    transform: rotate(-90deg);
+    background-color: rgb(26,26,26);
+    color: rgb(90,76,30);
+}
+
+#dimmer-control {
+    width: 20px; /* 太さ */
+    height: 300px; /* 高さ */
+}
+
+
+input[type="range"] {
+    width: 100%;
+    height: 10px;
+    background: #fcfcfc;
+    border-radius: 5px;
+}
+
+label {
+    display: none; /* ラベルを非表示にする */
+}
+
+/* logdate */
+.log-container {
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    width: 300px;
+    height: 600px;
+    padding: 10px;
+    background-color: rgb(30,30,30);
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    overflow-y: auto; /* スクロール可能に */
+    border: 2px solid rgb(90,76,30);
+}
+
+.log-container h3 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+

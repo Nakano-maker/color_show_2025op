@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.2s ease-in-out; /* ✅ スムーズな背景色変更 */
+    background-color: rgb(0, 0, 0); /* ✅ 初期色（黒） */
+}

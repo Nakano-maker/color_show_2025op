@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Host GUI</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="preview-area">
+			<div class="pgm"></div> <!-- PGM 枠 -->
+			<div class="pvw"></div> <!-- PVW 枠 -->
+			<div class="pgmfake"></div> <!-- PGMのフェイク枠 -->
+		</div>
+
+		<div class="control-panel">
+			<div class="preset-buttons" id="presetContainer"></div>
+			<div class="palette-container">
+				<input type="color" id="colorPicker">
+				<div id="colorDisplay"></div>
+			</div>
+		</div>
+
+		<div class="fade-control">
+			<button id="increaseFade">🔺</button> <!-- フェード増加 -->
+			<button id="decreaseFade">🔻</button> <!-- フェード減少 -->
+			<button id="flashButton">FLASH</button> <!-- フラッシュボタン -->
+			<button id="increaseBPM">🔺</button> <!-- BPM 増加 -->
+			<button id="decreaseBPM">🔻</button> <!-- BPM 減少 -->
+		</div>
+
+		<div id="fadeTimeDisplay">0.5s</div>
+		<div id="bpmDisplay">80 BPM</div>
+
+		<!-- Master Dimmer -->
+		<div class="dimmer-control">
+			<label for="masterDimmer">Master Dimmer</label>
+			<input type="range" id="masterDimmer" min="0" max="1" step="0.01" value="1">
+		</div>
+
+		<!-- 操作ボタン -->
+		<button id="cutButton">CUT</button> <!-- CUT ボタン -->
+		<button id="autoButton">AUTO</button> <!-- AUTO ボタン -->
+	</div>
+
+	<!-- ログ内容リスト -->
+	<div class="log-container">
+		<h3>logdeta</h3>
+		<ul id="logList"></ul>
+	</div>
+
+	<script src="script.js"></script>
+	
+</body>
+</html>
