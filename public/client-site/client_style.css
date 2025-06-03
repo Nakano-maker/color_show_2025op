@@ -2,8 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
-    overflow: hidden; /*  スクロールを防ぐ */
+    height: 400vh;
     text-align: center;
     font-family: Arial, sans-serif;
     background-color: rgb(0, 0, 0); /*  初期色（黒） */
