@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* ✅ スクロールを防ぐ */
+    overflow: hidden; /*  スクロールを防ぐ */
     text-align: center;
     font-family: Arial, sans-serif;
     background-color: rgb(0, 0, 0); /*  初期色（黒） */
@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.2s ease-in-out; /* ✅ スムーズな背景色変更 */
+    transition: background-color 0.2s ease-in-out; /* スムーズな背景色変更 */
 }
 
 /*  フルスクリーンメッセージのスタイル */
