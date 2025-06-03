@@ -1,9 +1,40 @@
-body {
+html, body {
     margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* ✅ スクロールを防ぐ */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 0); /*  初期色（黒） */
+    -webkit-overflow-scrolling: touch; /*  iOS のスムーズな表示 */
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     transition: background-color 0.2s ease-in-out; /* ✅ スムーズな背景色変更 */
-    background-color: rgb(0, 0, 0); /* ✅ 初期色（黒） */
+}
+
+/*  フルスクリーンメッセージのスタイル */
+#fullscreen-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+/*  iPhoneのツールバー非表示を最大化 iphoneは嫌いザマス*/
+@supports (-webkit-touch-callout: none) {
+    html, body {
+        height: -webkit-fill-available;
+    }
 }
