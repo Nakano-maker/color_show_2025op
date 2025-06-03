@@ -2,20 +2,27 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>PGM Color Update</title>
     <link rel="stylesheet" href="client_style.css">
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
             text-align: center;
             font-family: Arial, sans-serif;
             background-color: black;
             color: white;
+            -webkit-overflow-scrolling: touch;
         }
+
         #fullscreen-message {
-            position: absolute;
+            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -32,20 +39,26 @@
 
     <script src="client_script.js"></script>
     <script>
-        document.addEventListener("click", () => {
+        function enterFullscreen() {
             const elem = document.documentElement;
+
             if (elem.requestFullscreen) {
                 elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { 
+            } else if (elem.mozRequestFullScreen) {  
                 elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) {
+            } else if (elem.webkitRequestFullscreen) {  
                 elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) {
+            } else if (elem.msRequestFullscreen) {  
                 elem.msRequestFullscreen();
             }
+
             // メッセージを削除
             document.getElementById("fullscreen-message").style.display = "none";
-        });
+        }
+
+        // クリック & タッチイベントでフルスクリーンに
+        document.addEventListener("click", enterFullscreen);
+        document.addEventListener("touchend", enterFullscreen);
     </script>
 </body>
 </html>
