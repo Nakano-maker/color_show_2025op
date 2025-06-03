@@ -39,6 +39,22 @@ function enterFullscreen() {
     document.getElementById("fullscreen-message").style.display = "none";
 }
 
-//  タップ時にフルスクリーンを適用
-document.addEventListener("click", enterFullscreen);
-document.addEventListener("touchend", enterFullscreen);
+//  iPhoneのツールバーを非表示にする処理
+function hideIOSBars() {
+    setTimeout(() => {
+        document.documentElement.style.height = "100vh"; 
+        document.body.style.height = "100vh"; 
+        window.scrollTo(0, 1); // 1pxスクロールしてツールバーを隠す
+    }, 100);
+}
+
+//  タップ時にフルスクリーン & iPhoneツールバーを非表示
+document.addEventListener("click", () => {
+    enterFullscreen();
+    hideIOSBars();
+});
+
+document.addEventListener("touchend", () => {
+    enterFullscreen();
+    hideIOSBars();
+});
