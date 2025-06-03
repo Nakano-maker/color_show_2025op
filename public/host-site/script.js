@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             console.log(" PGM Color 更新:", currentColor);
         }
-    }, 1);
+    }, 7);
 });
 
 
