@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>PGM Color Update</title>
     <link rel="stylesheet" href="client_style.css">
     <style>
@@ -34,17 +34,19 @@
     <script>
         document.addEventListener("click", () => {
             const elem = document.documentElement;
+
             if (elem.requestFullscreen) {
                 elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { 
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) {
+            } else if (elem.webkitRequestFullscreen) { 
                 elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
             }
-            // メッセージを削除
+
+            // メッセージを非表示
             document.getElementById("fullscreen-message").style.display = "none";
+            
+            // フルスクリーン風の動作を再現
+            document.body.style.height = "100vh";
+            document.body.style.overflow = "hidden";
         });
     </script>
 </body>
