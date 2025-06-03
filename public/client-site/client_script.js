@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data.pgmColor) {
             let color = data.pgmColor;
 
-            //  `rgba(0,0,0,0)` の場合、強制的に黒 (`rgb(0,0,0)`) に変更
+            // `rgba(0,0,0,0)` の場合、強制的に黒 (`rgb(0,0,0)`) に変更
             if (color === "rgba(0,0,0,0)") {
                 color = "rgb(0,0,0)";
             }
 
-            //  `backgroundColor` ではなく `background` を適用
+            // `backgroundColor` ではなく `background` を適用
             document.body.style.background = color;
             console.log("server signal reception:", color);
         }
@@ -37,24 +37,13 @@ function enterFullscreen() {
 
     // メッセージを削除
     document.getElementById("fullscreen-message").style.display = "none";
-}
 
-//  iPhoneのツールバーを非表示にする処理
-function hideIOSBars() {
+    //  ツールバーを非表示にするスクロール処理
     setTimeout(() => {
-        document.documentElement.style.height = "100vh"; 
-        document.body.style.height = "100vh"; 
-        window.scrollTo(0, 1); // 1pxスクロールしてツールバーを隠す
+        window.scrollTo(0, 1);
     }, 100);
 }
 
-//  タップ時にフルスクリーン & iPhoneツールバーを非表示
-document.addEventListener("click", () => {
-    enterFullscreen();
-    hideIOSBars();
-});
-
-document.addEventListener("touchend", () => {
-    enterFullscreen();
-    hideIOSBars();
-});
+//  タップ時にフルスクリーン＆ツールバーを非表示
+document.addEventListener("click", enterFullscreen);
+document.addEventListener("touchend", enterFullscreen);
