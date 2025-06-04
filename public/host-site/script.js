@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function adjustFadeTime(change) {
             fadeTime = Math.max(0.1, fadeTime + change); //  フェード時間を更新
-            fadeTimeDisplay.textContent = `${fadeTime.toFixed(1)}s`; // ✅ 表示を更新
+            fadeTimeDisplay.textContent = `${fadeTime.toFixed(1)}s`; //  表示を更新
         }
 
         //  increaseFade の処理
@@ -223,7 +223,7 @@ setInterval(() => {
         socket.send(JSON.stringify({ pgmColor: pgmcoloroutput })); //  必ず送信
         
     }
-}, 0.2);
+}, 2);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
