@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const socket = new WebSocket("wss://color-show-2025op.onrender.com"); // WebSocket 接続
 
     socket.onopen = () => {
-        console.log("server Connect - true");
+        console.log("Server Connected");
     };
 
     socket.onmessage = (event) => {
@@ -15,10 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 color = "rgb(0,0,0)";
             }
 
-            // `backgroundColor` ではなく `background` を適用
-            document.body.style.background = color;
-            console.log("server signal reception:", color);
+            // 背景色変更を `requestAnimationFrame` で最適化
+            requestAnimationFrame(() => {
+                document.body.style.background = color;
+                console.log("Color updated:", color);
+            });
         }
+    };
+
+    // サーバーとの接続が切れた場合の再接続
+    socket.onclose = () => {
+        console.warn("🔄 WebSocket disconnected, retrying...");
+        setTimeout(() => {
+            location.reload();
+        }, 3000);
     };
 });
 
@@ -35,10 +45,13 @@ function enterFullscreen() {
         elem.msRequestFullscreen();
     }
 
-    // メッセージを削除
-    document.getElementById("fullscreen-message").style.display = "none";
+    //  フルスクリーン切り替え時にメッセージを削除
+    const fullscreenMessage = document.getElementById("fullscreen-message");
+    if (fullscreenMessage) {
+        fullscreenMessage.style.display = "none";
+    }
 
-    //  ツールバーを非表示にするスクロール処理
+    // ツールバーを非表示にするスクロール処理
     setTimeout(() => {
         window.scrollTo(0, 1);
     }, 100);
