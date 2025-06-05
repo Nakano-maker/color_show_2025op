@@ -332,3 +332,25 @@ const flashButton = document.getElementById("flashButton");
 flashButton.addEventListener("click", () => {
     addLog(" <<Flash PUT>>", "orange"); //  FLASH 操作をオレンジ色でログに記録
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const previewText = document.createElement("div");
+    previewText.textContent = "PREVIEW";
+    previewText.style.position = "absolute";
+    previewText.style.left = "35px";
+    previewText.style.top = "00px";
+    previewText.style.fontSize = "40px";
+    previewText.style.color = "white";
+
+    const programText = document.createElement("div");
+    programText.textContent = "PROGRAM";
+    programText.style.position = "absolute";
+    programText.style.left = "605px";
+    programText.style.top = "00px";
+    programText.style.fontSize = "40px";
+    programText.style.color = "White";
+
+    document.body.appendChild(previewText);
+    document.body.appendChild(programText);
+});
