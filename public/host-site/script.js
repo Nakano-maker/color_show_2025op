@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
     previewText.style.left = "35px";
     previewText.style.top = "00px";
     previewText.style.fontSize = "40px";
-    previewText.style.color = "white";
+    previewText.style.color = "green";
 
     const programText = document.createElement("div");
     programText.textContent = "PROGRAM";
@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
     programText.style.left = "605px";
     programText.style.top = "00px";
     programText.style.fontSize = "40px";
-    programText.style.color = "White";
+    programText.style.color = "red";
 
     document.body.appendChild(previewText);
     document.body.appendChild(programText);
